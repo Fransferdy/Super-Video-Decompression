@@ -1,0 +1,35 @@
+name = "test_ultra_compact_x2"
+model_type = "image"
+scale = 2
+#use_amp = true
+#compile = true
+
+[datasets.test]
+name = "val_1"
+type = "paired"
+dataroot_lq = 'C:\Users\Usuario\Desktop\super-decompression\dgm-original\dgm-2025.2\projects\super-video-decompression\src\third_party\neosr\lq_10_2X_splitdb\lq_10_2X_splitdb\test\lq'
+dataroot_gt = 'C:\Users\Usuario\Desktop\super-decompression\dgm-original\dgm-2025.2\projects\super-video-decompression\src\third_party\neosr\lq_10_2X_splitdb\lq_10_2X_splitdb\test\hq'
+
+
+[val]
+#val_freq = 1000
+tile = 200
+suffix = ""
+[val.metrics.psnr]
+type = "calculate_psnr"
+[val.metrics.ssim]
+type = "calculate_ssim"
+[val.metrics.dists]
+type = "calculate_dists"
+better = "lower"
+#[val.metrics.topiq]
+#type = "calculate_topiq"
+
+
+[network_g]
+type = "compact"
+num_conv = 8  # ultra compact
+num_feat = 64 # ultra compact
+
+[path]
+pretrain_network_g = 'C:\Users\Usuario\Desktop\super-decompression\dgm-original\dgm-2025.2\projects\super-video-decompression\src\third_party\neosr\experiments\ultra_compact_train\models\net_g_90000.pth'

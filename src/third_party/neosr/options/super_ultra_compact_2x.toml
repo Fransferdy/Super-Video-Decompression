@@ -1,0 +1,120 @@
+
+name = "super_ultra_compact_train"
+model_type = "image"
+scale = 2
+use_amp = true
+bfloat16 = true
+fast_matmul = true
+compile = false
+#manual_seed = 1024
+
+[datasets.train]
+type = "paired"
+dataroot_gt = 'C:\Users\Usuario\Desktop\super-decompression\dgm-original\dgm-2025.2\projects\super-video-decompression\src\third_party\neosr\dedup2x\hq\train'
+dataroot_lq = 'C:\Users\Usuario\Desktop\super-decompression\dgm-original\dgm-2025.2\projects\super-video-decompression\src\third_party\neosr\dedup2x\lq\train'
+patch_size = 64
+batch_size = 16
+#accumulate = 1
+augmentation = [ "none" ] #, "mixup", "cutmix", "resizemix", "cutblur" 
+#aug_prob = [ 0.5 ] #, 0.1, 0.1, 0.1, 0.5
+
+[datasets.val]
+name = "val"
+type = "paired"
+dataroot_gt = 'C:\Users\Usuario\Desktop\super-decompression\dgm-original\dgm-2025.2\projects\super-video-decompression\src\third_party\neosr\dedup2x\hq\validation'
+dataroot_lq = 'C:\Users\Usuario\Desktop\super-decompression\dgm-original\dgm-2025.2\projects\super-video-decompression\src\third_party\neosr\dedup2x\lq\validation'
+[val]
+val_freq = 1000
+tile = 200
+[val.metrics.psnr]
+type = "calculate_psnr"
+[val.metrics.ssim]
+type = "calculate_ssim"
+[val.metrics.dists]
+type = "calculate_dists"
+#better = "lower"
+#[val.metrics.topiq]
+#type = "calculate_topiq"
+
+[path]
+pretrain_network_g = 'C:\Users\Usuario\Desktop\super-decompression\dgm-original\dgm-2025.2\projects\super-video-decompression\src\third_party\neosr\dedup2x\2x-SuperUltraCompact-Pretrain.pth'
+#pretrain_network_d = 'experiments\pretrain_d.pth'
+
+[network_g]
+type = "compact"
+num_feat = 24 #super ultra compact
+num_conv = 8  #super ultra compact
+#num_conv = 8  #ultra compact
+#num_feat = 64 # ultra compact
+
+[network_d]
+type = "metagan"
+
+[train]
+grad_clip = false
+ema = 0.999
+#wavelet_guided = false
+#wavelet_init = 80000
+#sam = "fsam"
+#sam_init = 1000
+#eco = true
+#eco_init = 15000
+#match_lq_colors = true
+
+[train.optim_g]
+type = "adan_sf"
+lr = 1e-3
+betas = [ 0.98, 0.92, 0.99 ]
+weight_decay = 0.01
+schedule_free = true
+warmup_steps = 1600
+
+[train.optim_d]
+type = "adan_sf"
+lr = 1e-4
+betas = [ 0.98, 0.92, 0.99 ]
+weight_decay = 0.01
+schedule_free = true
+warmup_steps = 600
+
+#  losses
+[train.mssim_opt]
+type = "mssim_loss"
+loss_weight = 20
+
+[train.consistency_opt]
+type = "consistency_loss"
+loss_weight = 20
+
+[train.ldl_opt]
+type = "ldl_loss"
+loss_weight = 8000
+
+[train.fdl_opt]
+type = "fdl_loss"
+model = "dinov2" # "vgg", "resnet", "effnet"
+loss_weight = 0.05
+
+[train.gan_opt]
+type = "gan_loss"
+gan_type = "bce"
+loss_weight = 1.5
+
+[train.dists_opt]
+type = "dists_loss"
+loss_weight = 10
+
+[train.cannyedge_opt]
+type = "canny_edge_loss"
+loss_weight = 1.0
+
+[train.patchvariance_opt]
+type = "patch_variance_loss"
+loss_weight = 1.0
+
+[logger]
+total_iter = 120000
+save_checkpoint_freq = 1000
+use_tb_logger = true
+#save_tb_img = true
+#print_freq = 100

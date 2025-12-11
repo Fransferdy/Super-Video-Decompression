@@ -1,0 +1,277 @@
+{
+    "agent327cut_frame_00905.webp": [
+        {
+            "x1": 287,
+            "y1": 89,
+            "x2": 380,
+            "y2": 227
+        }
+    ],
+    "agent327cut_frame_00934.webp": [],
+    "agent327cut_frame_02354.webp": [
+        {
+            "x1": 61,
+            "y1": 123,
+            "x2": 131,
+            "y2": 215
+        }
+    ],
+    "agent327cut_frame_02904.webp": [
+        {
+            "x1": 523,
+            "y1": 68,
+            "x2": 639,
+            "y2": 198
+        }
+    ],
+    "agent327cut_frame_03029.webp": [],
+    "agent327cut_frame_05104.webp": [],
+    "bigbunnycut_frame_05824.webp": [],
+    "bigbunnycut_frame_07794.webp": [],
+    "bigbunnycut_frame_07993.webp": [],
+    "bigbunnycut_frame_11172.webp": [],
+    "bigbunnycut_frame_13593.webp": [],
+    "bigbunnycut_frame_13646.webp": [],
+    "bigbunnycut_frame_13804.webp": [],
+    "cam2cut_frame_03306.webp": [],
+    "cam3cut_frame_01259.webp": [],
+    "cam3cut_frame_01789.webp": [],
+    "cam3cut_frame_01816.webp": [],
+    "cam3cut_frame_02125.webp": [],
+    "cosmoscut_frame_01784.webp": [],
+    "cosmoscut_frame_02540.webp": [],
+    "cosmoscut_frame_02628.webp": [],
+    "cosmoscut_frame_05019.webp": [],
+    "cosmoscut_frame_07395.webp": [
+        {
+            "x1": 400,
+            "y1": 20,
+            "x2": 656,
+            "y2": 367
+        }
+    ],
+    "cosmoscut_frame_07615.webp": [
+        {
+            "x1": 461,
+            "y1": 121,
+            "x2": 581,
+            "y2": 298
+        }
+    ],
+    "cosmoscut_frame_07737.webp": [],
+    "cosmoscut_frame_08351.webp": [],
+    "cosmoscut_frame_10970.webp": [],
+    "cosmoscut_frame_12005.webp": [],
+    "cosmoscut_frame_12487.webp": [],
+    "cosmoscut_frame_13101.webp": [],
+    "elephantcut_frame_02453.webp": [
+        {
+            "x1": 551,
+            "y1": 106,
+            "x2": 605,
+            "y2": 177
+        }
+    ],
+    "elephantcut_frame_02633.webp": [],
+    "elephantcut_frame_02881.webp": [],
+    "elephantcut_frame_03600.webp": [],
+    "elephantcut_frame_05676.webp": [],
+    "elephantcut_frame_06778.webp": [],
+    "elephantcut_frame_07653.webp": [
+        {
+            "x1": 308,
+            "y1": 248,
+            "x2": 406,
+            "y2": 378
+        },
+        {
+            "x1": 722,
+            "y1": 112,
+            "x2": 928,
+            "y2": 384
+        }
+    ],
+    "elephantcut_frame_07737.webp": [],
+    "elephantcut_frame_08427.webp": [],
+    "elephantcut_frame_08444.webp": [
+        {
+            "x1": 206,
+            "y1": 155,
+            "x2": 303,
+            "y2": 290
+        },
+        {
+            "x1": 595,
+            "y1": 91,
+            "x2": 715,
+            "y2": 282
+        }
+    ],
+    "elephantcut_frame_08510.webp": [
+        {
+            "x1": 420,
+            "y1": 165,
+            "x2": 540,
+            "y2": 361
+        },
+        {
+            "x1": 163,
+            "y1": 137,
+            "x2": 259,
+            "y2": 275
+        }
+    ],
+    "elephantcut_frame_09386.webp": [
+        {
+            "x1": 361,
+            "y1": 120,
+            "x2": 390,
+            "y2": 160
+        },
+        {
+            "x1": 404,
+            "y1": 132,
+            "x2": 435,
+            "y2": 182
+        }
+    ],
+    "elephantcut_frame_11605.webp": [
+        {
+            "x1": 400,
+            "y1": 220,
+            "x2": 432,
+            "y2": 267
+        },
+        {
+            "x1": 295,
+            "y1": 166,
+            "x2": 319,
+            "y2": 201
+        }
+    ],
+    "elephantcut_frame_11961.webp": [],
+    "glasscut_frame_00222.webp": [],
+    "sintelcut_frame_00137.webp": [],
+    "sintelcut_frame_01211.webp": [
+        {
+            "x1": 305,
+            "y1": 129,
+            "x2": 348,
+            "y2": 195
+        }
+    ],
+    "sintelcut_frame_01385.webp": [],
+    "sintelcut_frame_06266.webp": [],
+    "sintelcut_frame_06381.webp": [
+        {
+            "x1": 357,
+            "y1": 252,
+            "x2": 415,
+            "y2": 322
+        },
+        {
+            "x1": 741,
+            "y1": 127,
+            "x2": 785,
+            "y2": 188
+        }
+    ],
+    "sintelcut_frame_07611.webp": [],
+    "sintelcut_frame_07953.webp": [],
+    "sintelcut_frame_08282.webp": [],
+    "sintelcut_frame_09485.webp": [],
+    "sintelcut_frame_09710.webp": [],
+    "sintelcut_frame_12969.webp": [],
+    "sintelcut_frame_13125.webp": [],
+    "sintelcut_frame_13646.webp": [
+        {
+            "x1": 349,
+            "y1": 95,
+            "x2": 493,
+            "y2": 285
+        }
+    ],
+    "sintelcut_frame_13869.webp": [],
+    "sintelcut_frame_14055.webp": [],
+    "sintelcut_frame_14992.webp": [],
+    "sintelcut_frame_16628.webp": [],
+    "sintelcut_frame_20085.webp": [],
+    "sintelcut_frame_20593.webp": [],
+    "sintelcut_frame_20670.webp": [],
+    "sintelcut_frame_21622.webp": [],
+    "sintelcut_frame_21696.webp": [],
+    "sintelcut_frame_21737.webp": [],
+    "springcut_frame_01002.webp": [],
+    "springcut_frame_01487.webp": [],
+    "springcut_frame_04604.webp": [],
+    "springcut_frame_06683.webp": [
+        {
+            "x1": 745,
+            "y1": 131,
+            "x2": 835,
+            "y2": 238
+        }
+    ],
+    "springcut_frame_06941.webp": [
+        {
+            "x1": 364,
+            "y1": 91,
+            "x2": 473,
+            "y2": 223
+        }
+    ],
+    "springcut_frame_09136.webp": [],
+    "spritecut_frame_04029.webp": [
+        {
+            "x1": 84,
+            "y1": 153,
+            "x2": 149,
+            "y2": 242
+        },
+        {
+            "x1": 640,
+            "y1": 0,
+            "x2": 718,
+            "y2": 64
+        }
+    ],
+    "spritecut_frame_04653.webp": [
+        {
+            "x1": 139,
+            "y1": 229,
+            "x2": 190,
+            "y2": 290
+        }
+    ],
+    "spritecut_frame_05023.webp": [],
+    "spritecut_frame_05092.webp": [],
+    "spritecut_frame_05203.webp": [],
+    "spritecut_frame_06753.webp": [
+        {
+            "x1": 324,
+            "y1": 164,
+            "x2": 428,
+            "y2": 271
+        }
+    ],
+    "spritecut_frame_08099.webp": [
+        {
+            "x1": 441,
+            "y1": 135,
+            "x2": 487,
+            "y2": 195
+        }
+    ],
+    "spritecut_frame_08282.webp": [],
+    "spritecut_frame_10036.webp": [],
+    "spritecut_frame_11046.webp": [],
+    "spritecut_frame_11268.webp": [
+        {
+            "x1": 450,
+            "y1": 106,
+            "x2": 563,
+            "y2": 224
+        }
+    ],
+    "spritecut_frame_13680.webp": []
+}

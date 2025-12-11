@@ -1,0 +1,37 @@
+# Results will be saved to neosr/experiments/results/
+
+name = "test_baseline_in_28i_x2"
+model_type = "image"
+scale = 2
+#use_amp = true
+#compile = true
+
+[datasets.test_1]
+name = "val_1"
+type = "paired"
+dataroot_lq = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\data\processed\lq_28i_2X_splitdb\test\lq'
+dataroot_gt = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\data\processed\lq_28i_2X_splitdb\test\hq'
+
+
+[val]
+save_img = false
+#tile = 100
+suffix = ""
+#[val.metrics.calculate_patch_difference_psnr]
+#type = "calculate_patch_difference_psnr"
+[val.metrics.psnr]
+type = "calculate_psnr"
+[val.metrics.ssim]
+type = "calculate_ssim"
+[val.metrics.dists]
+type = "calculate_dists"
+better = "lower"
+#[val.metrics.topiq]
+#type = "calculate_topiq"
+
+
+[network_g]
+type = "baseline_arch"
+
+[path]
+pretrain_network_g = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\models\pretrain\baseline_2x_weights.pth'

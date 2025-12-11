@@ -1,0 +1,30 @@
+# Results will be saved to neosr/experiments/results/
+
+name = "generate_28i_zeroshot_anime"
+model_type = "image"
+scale = 1
+#use_amp = true
+#compile = true
+
+[datasets.test_1]
+name = "val_1"
+type = "single"
+dataroot_lq = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\data\processed\\lq_28_2X_testdb_anime_zeroshot\test\lq'
+#dataroot_gt = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\data\processed\\lq_28_2X_testdb_anime_zeroshot\test\hq'
+
+
+[val]
+#val_freq = 1000
+#tile = 200
+suffix = ""
+[val.metrics.psnr]
+type = "calculate_psnr"
+
+
+[network_g]
+type = "compact"
+num_conv = 8 
+num_feat = 35
+
+[path]
+pretrain_network_g = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\models\pth\1x_mega_34_10.pth'

@@ -1,0 +1,126 @@
+
+name = "train_ultra_compact_10_x2_ogcombined"
+model_type = "image"
+scale = 2
+use_amp = true
+bfloat16 = true
+fast_matmul = true
+compile = false
+#manual_seed = 1024
+
+[datasets.train]
+type = "paired"
+dataroot_gt = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\data\processed\lq_10_2X_splitdb\train\hq'
+dataroot_lq = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\data\processed\lq_10_2X_splitdb\train\lq'
+patch_size = 60
+batch_size = 32
+#accumulate = 1
+augmentation = [ "none" ] #, "mixup", "cutmix", "resizemix", "cutblur" 
+aug_prob = [ 1 ] #, 0.1, 0.1, 0.1, 0.5
+
+[datasets.val]
+name = "val"
+type = "paired"
+dataroot_gt = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\data\processed\lq_10_2X_splitdb\val\hq'
+dataroot_lq = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\data\processed\lq_10_2X_splitdb\val\lq'
+[val]
+val_freq = 1000
+tile = 200
+[val.metrics.psnr]
+type = "calculate_psnr"
+[val.metrics.ssim]
+type = "calculate_ssim"
+[val.metrics.dists]
+type = "calculate_dists"
+better = "lower"
+#[val.metrics.topiq]
+#type = "calculate_topiq"
+
+[path]
+pretrain_network_g = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\src\third_party\neosr\experiments\train_ultra_compact_10_x2\models\net_g_124000.pth'
+pretrain_network_d = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\src\third_party\neosr\experiments\train_ultra_compact_10_x2\models\net_d_124000.pth'
+
+[network_g]
+type = "compact"
+num_feat = 64
+num_conv = 8 
+
+[network_d]
+type = "metagan"
+
+[train]
+grad_clip = false
+ema = 0.999
+wavelet_guided = false
+wavelet_init = 80000
+#sam = "fsam"
+#sam_init = 1000
+#eco = true
+#eco_init = 15000
+#match_lq_colors = true
+
+[train.optim_g]
+type = "adan_sf"
+lr = 1e-3
+betas = [ 0.98, 0.92, 0.99 ]
+weight_decay = 0.01
+schedule_free = true
+warmup_steps = 1600
+
+[train.optim_d]
+type = "adan_sf"
+lr = 1e-4
+betas = [ 0.98, 0.92, 0.99 ]
+weight_decay = 0.01
+schedule_free = true
+warmup_steps = 600
+
+#losses
+[train.mssim_opt]
+type = "mssim_loss"
+loss_weight = 15
+
+[train.consistency_opt]
+type = "consistency_loss"
+loss_weight = 20
+
+[train.ldl_opt]
+type = "ldl_loss"
+loss_weight = 8000
+
+[train.fdl_opt]
+type = "fdl_loss"
+model = "dinov2" # "vgg", "resnet", "effnet"
+loss_weight = 0.03
+
+[train.gan_opt]
+type = "gan_loss"
+gan_type = "bce"
+loss_weight = 1.5
+
+[train.dists_opt]
+type = "dists_loss"
+loss_weight = 12
+
+[train.cannyedge_opt]
+type = "canny_edge_loss"
+loss_weight = 1.2
+
+#[train.patchvariance_opt]
+#type = "patch_variance_loss"
+#loss_weight = 1.5
+
+[train.patchvariance_combined_opt]
+type = "patch_variance_combined_loss"
+loss_weight = 1.5
+alpha_charb=0.2
+alpha_mse=0.3
+alpha_ssim=0.5
+#eps=1e-6
+
+[logger]
+total_iter = 200000
+save_checkpoint_freq = 1000
+use_tb_logger = true
+#save_tb_img = true
+#print_freq = 100

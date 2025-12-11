@@ -1,0 +1,37 @@
+# Results will be saved to neosr/experiments/results/
+
+name = "test_mega_compact_28i_x2_pretrain"
+model_type = "image"
+scale = 2
+#use_amp = true
+#compile = true
+
+[datasets.test_1]
+name = "val_1"
+type = "paired"
+dataroot_lq = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\data\processed\lq_28i_2X_splitdb\test\lq'
+dataroot_gt = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\data\processed\lq_28i_2X_splitdb\test\hq'
+
+
+[val]
+save_img = false
+#tile = 200
+suffix = ""
+[val.metrics.psnr]
+type = "calculate_psnr"
+[val.metrics.ssim]
+type = "calculate_ssim"
+[val.metrics.dists]
+type = "calculate_dists"
+better = "lower"
+#[val.metrics.topiq]
+#type = "calculate_topiq"
+
+
+[network_g]
+type = "compact"
+num_conv = 8 
+num_feat = 35
+
+[path]
+pretrain_network_g = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\models\pretrain\2x_compact_8_35_identity_pretrain_from24net.pth'

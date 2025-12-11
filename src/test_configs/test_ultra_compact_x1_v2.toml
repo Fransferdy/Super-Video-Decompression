@@ -1,0 +1,22 @@
+# Results will be saved to neosr/experiments/results/
+
+name = "validate_all_ultra_compact_x1_v2"
+model_type = "image"
+scale = 1
+#use_amp = true
+#compile = true
+
+[datasets.test_1]
+name = "val_1"
+type = "single"
+dataroot_lq = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\data\processed\test\cam2cut_34'
+[val]
+#tile = 200
+
+[network_g]
+type = "compact"
+num_conv = 8  # ultra compact
+num_feat = 64 # ultra compact
+
+[path]
+pretrain_network_g = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\src\third_party\neosr\experiments\train_ultra_compact_1x_v2\models\net_g_125000.pth'

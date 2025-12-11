@@ -1,0 +1,45 @@
+# Results will be saved to neosr/experiments/results/
+
+name = "ultra1X-super28i_2X-super28i_2X"
+model_type = "image"
+scale = 4
+#use_amp = true
+#compile = true
+
+[datasets.test_1]
+name = "val_1"
+type = "paired"
+dataroot_lq = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\data\processed\lq_28_4X_splitdb\test\lq'
+dataroot_gt = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\data\processed\lq_28_4X_splitdb\test\hq'
+
+
+[val]
+
+save_img = false
+#tile = 100
+suffix = ""
+#[val.metrics.calculate_patch_difference_psnr]
+#type = "calculate_patch_difference_psnr"
+[val.metrics.psnr]
+type = "calculate_psnr"
+#[val.metrics.ssim]
+#type = "calculate_ssim"
+#[val.metrics.dists]
+#type = "calculate_dists"
+#better = "lower"
+#[val.metrics.topiq]
+#type = "calculate_topiq"
+
+
+[network_g]
+type = "compact_triple"
+num_conv = 8 
+num_feat1 = 64
+compact_path1 = '..\..\..\models\pth\1x_ultra_34_10.pth'
+num_feat2 = 24
+compact_path2 = '..\..\..\models\pth\2x_28i_2X-10_super.pth'
+num_feat3 = 24
+compact_path3 = '..\..\..\models\pth\2x_28i_2X-10_super.pth'
+
+[path]
+#pretrain_network_g = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\models\pth\2x_10_2X-10_mega_.pth'

@@ -1,0 +1,25 @@
+BenchMark
+https://trainner-redux.readthedocs.io/en/latest/benchmarks.html
+
+Benchmark (só de compact)
+https://github.com/the-database/mpv-upscale-2x_animejanai/wiki/Benchmarks
+
+
+- Interessante Testar: 
+  - spanplus_sts 4x fp16 (com atenção parametro preso)
+  - sebica (e sebica mini) (com atenção parametro livre)
+
+2 Modelos 2x
+1 Modelo 1x e 1 Modelo 4x
+
+1x Super Ultra Compact ( edge ) -> 2x Super Ultra Compact ( tudo ) -> Ultra Compact 2x (Upscale)
+
+2x Sebica -> 2x Ultra Compact
+
+2x Spanplus -> 2x Ultra Compact
+
+Nunca 2x Compact -> 2x Compact <- Muito Pesado
+
+
+
+

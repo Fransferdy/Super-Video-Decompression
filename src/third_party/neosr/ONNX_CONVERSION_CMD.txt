@@ -1,0 +1,1 @@
+python optsconvert.py --output t2_v2_ultra125_x1.onnx --fp16 --optimize -opt "..\..\test_ultra_compact_x1_v2.toml"

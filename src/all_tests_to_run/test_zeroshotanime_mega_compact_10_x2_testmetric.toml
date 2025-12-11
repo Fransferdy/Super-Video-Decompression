@@ -1,0 +1,40 @@
+# Results will be saved to neosr/experiments/results/
+
+name = "test_zeroshotanime_mega_10_2x_testmetric"
+model_type = "image"
+scale = 2
+#use_amp = true
+#compile = true
+
+[datasets.test_1]
+name = "val_1"
+type = "paired"
+dataroot_lq = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\data\processed\lq_10_2X_splitdb\valTestMetric\lq'
+dataroot_gt = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\data\processed\lq_10_2X_splitdb\valTestMetric\hq'
+
+
+[val]
+
+save_img = false
+#tile = 100
+suffix = ""
+#[val.metrics.calculate_patch_difference_psnr]
+#type = "calculate_patch_difference_psnr"
+[val.metrics.psnr]
+type = "calculate_psnr"
+[val.metrics.ssim]
+type = "calculate_ssim"
+#[val.metrics.dists]
+#type = "calculate_dists"
+#better = "lower"
+#[val.metrics.topiq]
+#type = "calculate_topiq"
+
+
+[network_g]
+type = "compact"
+num_conv = 8 
+num_feat = 35
+
+[path]
+pretrain_network_g = 'C:\Users\Fernando\Documents\Unicamp\IA_376_GAN\workspace\dgm-2025.2\projects\super-video-decompression\models\pth\2x_10_2X-10_mega_.pth'

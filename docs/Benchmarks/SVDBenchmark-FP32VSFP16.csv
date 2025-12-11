@@ -1,0 +1,18 @@
+Machine ; Precision ; Upscale,360p (1440p out),480p (2k out),576p (3k out),720p (4k out),,,,,
+NT_3080 ; FP32 ; 4X,,,,,,,Machines,CPU,GPU
+Super1x Super2x Super2x,41.47,23.95,18.92,14.02,,,NT_3080,I7_8565-U 1.80ghz 4 core,RTX 3080 eGPU over Thunderbolt 3
+Super1x Super2x Mega2x,37.2,21.42,17.18,12.81,,,DT_2060,I7_6700K 4.0ghz 4 core,RTX 2060
+Super1x Super2x Ultra2x,37.15,20.98,17.27,12.85,,,DT_3090,I9_11900KF 3.5ghz 8 core,RTX 3090
+Super1x Mega2x Mega2x,37.83,20.66,17.43,12.77,,,,,
+Super1x Mega2x Ultra2x,37.93,20.91,17.37,12.83,,,,,
+Super1x Ultra2x Ultra2x,37.92,21.5,17.1,12.83,Total FPS Somado,Conclusao,,,
+Soma FPS,229.5,129.42,105.27,78.11,542.3,F32 tem qualidade maior e mais velocidade em média,,,
+Machine ; Precision ; Upscale,360p (1440p out),480p (2k out),576p (3k out),720p (4k out),,,,,
+NT_3080 ; FP16 ; 4X,,,,,,,,,
+Super1x Super2x Super2x,38.19,25.9,22.28,16.25,,,,,
+Super1x Super2x Mega2x,29.12,20.6,17.11,12.43,,,,,
+Super1x Super2x Ultra2x,32.71,20.91,17.05,12.4,,,,,
+Super1x Mega2x Mega2x,33.83,21.67,16.88,12.38,,,,,
+Super1x Mega2x Ultra2x,39.38,24.17,17.74,13.87,,,,,
+Super1x Ultra2x Ultra2x,37.04,21.74,16.28,12.14,Total FPS Somado,,,,
+Soma FPS,210.27,134.99,107.34,79.47,532.07,,,,

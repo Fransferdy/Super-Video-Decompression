@@ -1,0 +1,7 @@
+Use neosr install script, to create a neosr installation, copy the .venv folder to here.
+
+ensure the venv has pip
+
+use ./.venv/Scripts/activate
+python -m ensurepip
+./.venv/Scripts/pip install -r requirements.txt
