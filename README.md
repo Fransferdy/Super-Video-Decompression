@@ -170,7 +170,7 @@ face aware dataset filtering(only images with faces left) ~3k images:
 
 To demo the models created during this research, the following MPV Video Player is necessary:
 https://github.com/the-database/mpv-upscale-2x_animejanai
-It seems this player requires NVIDIA GPUs (we have not tested with other kinds of GPUs)
+This player works better with NVIDIA GPUs but also work with Intel and AMD.
 
 The player implements a filter which can apply to current image frames ONNX runtime models. 
 
